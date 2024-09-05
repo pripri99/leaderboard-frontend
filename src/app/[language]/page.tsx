@@ -33,9 +33,7 @@ export default async function Home({ params }: Props) {
           <Typography variant="h3" data-testid="home-title" gutterBottom>
             {t("title")}
           </Typography>
-          <Typography>
-            {t("description")}
-          </Typography>
+          <Typography>{t("description")}</Typography>
         </Grid>
         {/* <Grid item sx={{ mx: "auto" }}>
           <MuiLink href="/privacy-policy">Privacy Policy</MuiLink>
