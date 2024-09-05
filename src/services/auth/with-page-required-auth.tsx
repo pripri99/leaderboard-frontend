@@ -50,7 +50,7 @@ function withPageRequiredAuth(
         let redirectTo = `/${language}/sign-in?${params.toString()}`;
 
         if (user) {
-          redirectTo = `/${language}`;
+          redirectTo = `/${language}/dashboard`;
         }
 
         router.replace(redirectTo);

@@ -7,7 +7,11 @@
     "signUp": "Sign Up",
     "profile": "Profile",
     "users": "Users",
-    "logout": "Logout"
+    "logout": "Logout",
+    "leaderboard": "Leaderboard",
+    "dashboard": "Home",
+    "faq": "FAQ",
+    "submit-image": "Submit Image"
   },
   "formInputs": {
     "avatarInput": {

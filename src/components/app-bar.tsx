@@ -55,7 +55,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href={user ? "/dashboard" : "/"}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -104,6 +104,48 @@ function ResponsiveAppBar() {
                 </Typography>
               </MenuItem>
 
+              {isLoaded && user && [
+                <MenuItem
+                  key="leaderboard"
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  href="/leaderboard"
+                >
+                  <Typography textAlign="center">
+                    {t("common:navigation.leaderboard")}
+                  </Typography>
+                </MenuItem>
+                ,
+                // mobile-menu-items
+              ]}
+
+              {isLoaded && user && [
+                <MenuItem
+                  key="faq"
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  href="/faq"
+                >
+                  <Typography textAlign="center">
+                    {t("common:navigation.faq")}
+                  </Typography>
+                </MenuItem>,
+                // mobile-menu-items
+              ]}
+              {isLoaded && user && [
+                <MenuItem
+                  key="submit-image"
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  href="/submit-image"
+                >
+                  <Typography textAlign="center">
+                    {t("common:navigation.submit-image")}
+                  </Typography>
+                </MenuItem>
+                ,
+                // mobile-menu-items
+              ]}
               {!!user?.role &&
                 [RoleEnum.ADMIN].includes(Number(user?.role?.id)) && [
                   <MenuItem
@@ -146,33 +188,81 @@ function ResponsiveAppBar() {
                 ]}
             </Menu>
           </Box>
+                
           <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            {t("common:app-name")}
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-              component={Link}
-              href="/"
+              variant="h5"
+              noWrap
+              component="a"
+              href= {user ? "/dashboard" : "/"}
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
             >
-              {t("common:navigation.home")}
-            </Button>
+              {t("common:app-name")}
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+            {user && [
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+                component={Link}
+                href="/dashboard"
+              >
+                {t("common:navigation.dashboard")}
+              </Button>
+            ]}
+
+            {!user && [
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+                component={Link}
+                href="/"
+              >
+                {t("common:navigation.home")}
+              </Button>
+            ]}
+
+            {user && [
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+                component={Link}
+                href="/leaderboard"
+              >
+                {t("common:navigation.leaderboard")}
+              </Button>
+            ]}
+
+            {user && [
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+                component={Link}
+                href="/submit-image"
+              >
+                {t("common:navigation.submit-image")}
+              </Button>
+            ]}
+            {user && [
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: { xs: "none", md: "flex" } }}
+                component={Link}
+                href="/faq"
+              >
+                {t("common:navigation.faq")}
+              </Button>
+            ]}
 
             {!!user?.role &&
               [RoleEnum.ADMIN].includes(Number(user?.role?.id)) && (
