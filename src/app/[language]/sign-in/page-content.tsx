@@ -84,9 +84,7 @@ function Form() {
         (key) => {
           setError(key, {
             type: "manual",
-            message: t(
-              `sign-in:inputs.email.validation.server.emailNotExists`
-            ),
+            message: t(`sign-in:inputs.email.validation.server.emailNotExists`),
           });
         }
       );
