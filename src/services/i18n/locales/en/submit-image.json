@@ -1,6 +1,6 @@
 {
     "title": "Upload your image",
-    "description": "File should be .JPEG, .JPEG or .PNG",
+    "description": "File should be .JPEG, .JPG or .PNG",
     "actions": {
       "submit": "Submit Image"
     }
