@@ -1,5 +1,8 @@
 {
-    "title": "Image Submission",
-    "description": "<To Do>"
+    "title": "Upload your image",
+    "description": "File should be .JPEG, .JPEG or .PNG",
+    "actions": {
+      "submit": "Submit Image"
+    }
   }
   

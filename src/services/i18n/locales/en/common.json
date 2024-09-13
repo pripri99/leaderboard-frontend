@@ -18,6 +18,10 @@
       "dropzoneText": "Drop the image here ...",
       "dragAndDrop": "Or drag 'n' drop some files here",
       "selectFile": "Select an image"
+    },
+    "fileInput": {
+      "selectFile": "Select an image",
+      "replaceFile": "Replace image"
     }
   },
   "leavePage": {
