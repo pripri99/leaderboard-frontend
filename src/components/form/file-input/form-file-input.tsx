@@ -9,7 +9,6 @@ import {
   Controller,
   ControllerProps,
   FieldPath,
-
   FieldValues,
 } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -68,7 +67,7 @@ const StyledOverlay = styled(Box)(() => {
   };
 });
 
-const StyledFile = styled(Avatar)(({ }) => ({
+const StyledFile = styled(Avatar)(({}) => ({
   width: 100,
   height: 100,
 }));
@@ -85,7 +84,7 @@ function FileInput(props: FileInputProps) {
     },
     [onChange]
   );
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
       "image/jpeg": [],
@@ -120,7 +119,9 @@ function FileInput(props: FileInputProps) {
             </IconButton>
           </StyledOverlay>
         </StyledWrapperFile>
-      ) : <></>}
+      ) : (
+        <></>
+      )}
 
       <Box sx={{ mt: 2 }}>
         {props?.value ? (
@@ -134,8 +135,9 @@ function FileInput(props: FileInputProps) {
               ? t("common:loading")
               : t("common:formInputs.fileInput.replaceFile")}
             <input {...getInputProps()} />
-          </Button>) :
-          (<Button
+          </Button>
+        ) : (
+          <Button
             variant="contained"
             component="label"
             disabled={isLoading}
@@ -145,9 +147,8 @@ function FileInput(props: FileInputProps) {
               ? t("common:loading")
               : t("common:formInputs.fileInput.selectFile")}
             <input {...getInputProps()} />
-          </Button>)
-        }
-
+          </Button>
+        )}
       </Box>
 
       {props.error && (

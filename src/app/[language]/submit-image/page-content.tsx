@@ -19,7 +19,6 @@ type EditFormData = {
 };
 
 const useValidationSchema = () => {
-  const { t } = useTranslation("submit-image");
   return yup.object().shape({});
 };
 
@@ -43,7 +42,6 @@ function FormActions() {
 
 function FormImageInfo() {
   const { user } = useAuth();
-  const { t } = useTranslation("submit-image");
   const validationSchema = useValidationSchema();
 
   const methods = useForm<EditFormData>({
@@ -53,10 +51,10 @@ function FormImageInfo() {
     },
   });
 
-  const { handleSubmit, setError, reset } = methods;
+  const { handleSubmit, reset } = methods;
 
   const onSubmit = handleSubmit(async (formData) => {
-    console.log("image:", formData)
+    console.log("image:", formData);
     // to add minio and success messages
   });
 
@@ -72,21 +70,17 @@ function FormImageInfo() {
         <form onSubmit={onSubmit}>
           <Grid container spacing={2} mb={3} mt={3}>
             <Grid item xs={12}>
-              <FormFileInput<EditFormData>
-                name="photo"
-                testId="photo"
-              />
+              <FormFileInput<EditFormData> name="photo" testId="photo" />
             </Grid>
             <Grid item xs={12}>
-            <FormActions />
-          </Grid>
+              <FormActions />
+            </Grid>
           </Grid>
         </form>
       </Container>
-    </FormProvider >
+    </FormProvider>
   );
 }
-
 
 function SubmitImage() {
   const { t } = useTranslation("submit-image");
@@ -100,9 +94,7 @@ function SubmitImage() {
           </Typography>
           <Typography> {t("submit-image:description")} </Typography>
           <FormImageInfo />
-          
         </Grid>
-
       </Grid>
     </Container>
   );
