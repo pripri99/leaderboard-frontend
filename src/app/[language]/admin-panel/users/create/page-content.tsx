@@ -20,6 +20,7 @@ import { useTranslation } from "@/services/i18n/client";
 import { usePostUserService } from "@/services/api/services/users";
 import { useRouter } from "next/navigation";
 import { Role, RoleEnum } from "@/services/api/types/role";
+import { Points } from "@/services/api/types/points";
 import FormSelectInput from "@/components/form/select/form-select";
 
 type CreateUserFormData = {
@@ -30,6 +31,7 @@ type CreateUserFormData = {
   passwordConfirmation: string;
   photo?: FileEntity;
   role: Role;
+  points: Points;
 };
 
 const useValidationSchema = () => {
@@ -78,6 +80,16 @@ const useValidationSchema = () => {
         name: yup.string(),
       })
       .required(t("admin-panel-users-create:inputs.role.validation.required")),
+    points: yup
+      .object()
+      .shape({
+        id: yup.mixed<string | number>().required(),
+        category1: yup.number().required().min(0),
+        category2: yup.number().required().min(0),
+        category3: yup.number().required().min(0),
+        category4: yup.number().required().min(0),
+        category5: yup.number().required().min(0),
+      })
   });
 };
 
@@ -118,6 +130,14 @@ function FormCreateUser() {
         id: RoleEnum.USER,
       },
       photo: undefined,
+      points: {
+        id: 1,
+        category1: 0,
+        category2: 0,
+        category3: 0,
+        category4: 0,
+        category5: 0,
+      }
     },
   });
 
