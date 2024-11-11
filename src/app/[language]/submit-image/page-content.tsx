@@ -82,7 +82,9 @@ function FormImageInfo() {
             </Grid>
             <Grid item xs={12}>
               <FormControl fullWidth>
-                <InputLabel id="label-select">{t("submit-image:selectLabel")}</InputLabel>
+                <InputLabel id="label-select">
+                  {t("submit-image:selectLabel")}
+                </InputLabel>
                 <Select
                   labelId="label-select"
                   {...methods.register("label")}
