@@ -1,8 +1,13 @@
 {
-    "title": "Upload your image",
-    "description": "File should be .JPEG, .JPG or .PNG",
-    "actions": {
-      "submit": "Submit Image"
-    }
+  "title": "Upload your image",
+  "description": "File should be .JPEG, .JPG or .PNG",
+  "actions": {
+    "submit": "Submit Image"
+  },
+  "labels": {
+    "label1": "Plastic",
+    "label2": "Glass",
+    "label3": "Paper/Cardboard",
+    "label4": "Compostable Waste"
   }
-  
+}

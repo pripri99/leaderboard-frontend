@@ -13,9 +13,14 @@ import { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "@mui/material/Button";
 import useLeavePage from "@/services/leave-page/use-leave-page";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 type EditFormData = {
   photo?: FileEntity;
+  label?: string;
 };
 
 const useValidationSchema = () => {
@@ -42,12 +47,14 @@ function FormActions() {
 
 function FormImageInfo() {
   const { user } = useAuth();
+  const { t } = useTranslation("submit-image");
   const validationSchema = useValidationSchema();
 
   const methods = useForm<EditFormData>({
     resolver: yupResolver(validationSchema),
     defaultValues: {
       photo: undefined,
+      label: "",
     },
   });
 
@@ -61,6 +68,7 @@ function FormImageInfo() {
   useEffect(() => {
     reset({
       photo: user?.photo,
+      label: "",
     });
   }, [user, reset]);
 
@@ -71,6 +79,22 @@ function FormImageInfo() {
           <Grid container spacing={2} mb={3} mt={3}>
             <Grid item xs={12}>
               <FormFileInput<EditFormData> name="photo" testId="photo" />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControl fullWidth>
+                <InputLabel id="label-select">{t("labels.label1")}</InputLabel>
+                <Select
+                  labelId="label-select"
+                  {...methods.register("label")}
+                  defaultValue=""
+                  data-testid="label-select"
+                >
+                  <MenuItem value="label1">{t("labels.label1")}</MenuItem>
+                  <MenuItem value="label2">{t("labels.label2")}</MenuItem>
+                  <MenuItem value="label3">{t("labels.label3")}</MenuItem>
+                  <MenuItem value="label4">{t("labels.label4")}</MenuItem>
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
               <FormActions />
