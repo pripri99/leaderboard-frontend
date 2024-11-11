@@ -9,5 +9,6 @@
     "label2": "Glass",
     "label3": "Paper/Cardboard",
     "label4": "Compostable Waste"
-  }
+  },
+  "selectLabel": "Select Label"
 }
