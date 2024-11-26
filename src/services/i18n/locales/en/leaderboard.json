@@ -1,5 +1,13 @@
 {
-    "title": "Leaderboard",
-    "description": "<To Do>"
-  }
-  
+  "title": "Leaderboard",
+  "description": "Check out the top users and full rankings!",
+  "topUsers": "Top Users",
+  "fullRanking": "Full Ranking",
+  "rank": "Rank",
+  "name": "Name",
+  "points": "Points",
+  "pointsDescription": "{points} points",
+  "currentUserRank": "Your rank:",
+  "loading": "Loading leaderboard...",
+  "errorLoading": "Error loading leaderboard. Please try again later."
+}

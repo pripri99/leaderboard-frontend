@@ -17,4 +17,5 @@ export type User = {
   socialId?: string;
   role?: Role;
   points?: Points;
+  totalPoints?: number;
 };
