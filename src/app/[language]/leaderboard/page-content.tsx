@@ -139,9 +139,9 @@ function Leaderboard() {
         {user && currentUserRank > 0 ? (
           <Grid item xs={12} mt={3}>
             <Box textAlign="center">
-            <Typography variant="h6">
-              {`${t("leaderboard:currentUserRank")} ${currentUserRank}`}
-            </Typography>
+              <Typography variant="h6">
+                {`${t("leaderboard:currentUserRank")} ${currentUserRank}`}
+              </Typography>
             </Box>
           </Grid>
         ) : (
@@ -153,7 +153,6 @@ function Leaderboard() {
             </Box>
           </Grid>
         )}
-
       </Grid>
     </Container>
   );
