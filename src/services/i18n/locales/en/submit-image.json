@@ -5,11 +5,11 @@
     "submit": "Submit Image"
   },
   "labels": {
-    "label1": "Plastic",
-    "label2": "Glass",
-    "label3": "Paper/Cardboard",
-    "label4": "Compostable Waste",
-    "label5": "Compostable Waste"
+    "label1": "category1",
+    "label2": "category2",
+    "label3": "category3",
+    "label4": "category4",
+    "label5": "category5"
   },
   "selectLabel": "Select Label"
 }
