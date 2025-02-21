@@ -5,11 +5,76 @@
     "submit": "Submit Image"
   },
   "labels": {
-    "label1": "category1",
-    "label2": "category2",
-    "label3": "category3",
-    "label4": "category4",
-    "label5": "category5"
+    "category1": "Multi-Material",
+    "category2": "Paper",
+    "category3": "Glass",
+    "category4": "Metal",
+    "category5": "Plastic"
   },
-  "selectLabel": "Select a Label"
+  "childCategories": {
+    "Multi-Material": ["Blister pack", "Tetrapak"],
+    "Paper": [
+      "Cardboard", "Cardboard Box", "Cardboard food container", 
+      "Cardboard lined carton", "Paper", "Paper bag", "Paper coffee cup",
+      "Paper cup", "Paper envelope", "Paper magazine", "Paper Newspaper",
+      "Paper packet", "Paper plate", "Paper wrapping"
+    ],
+    "Glass": ["Glass"],
+    "Metal": [
+      "Metal bottle cap", "Metal can", "Metal container", "Metal foil",
+      "Metal tray", "Metal wrapper"
+    ],
+    "Plastic": [
+      "Plastic bag", "Plastic bottle", "Plastic bottle cap",
+      "Plastic cofee cup lid", "Plastic condiment container",
+      "Plastic container lid", "Plastic cup", "Plastic cutlery",
+      "Plastic food container", "Plastic packet", "Styrofoam",
+      "Styrofoam container", "Transparent plastic"
+    ]
+  },
+  "childCategoryDefinitions": {
+    "Blister pack": "A metal and plastic blister pack (ex:pills)",
+    "Tetrapak": "(ex: apple juice carton)",
+    "Cardboard": "Any cardboard",
+    "Cardboard Box": "Any brown cardboard box",
+    "Cardboard food container": "Any cardboard that directly contains food",
+    "Cardboard lined carton": "Milk cartons, etc.",
+    "Paper": "Any paper",
+    "Paper bag": "Any paper bag",
+    "Paper coffee cup": "Any paper coffee cup",
+    "Paper cup": "Any paper cup",
+    "Paper envelope": "Any paper envelope",
+    "Paper magazine": "Any paper magazine",
+    "Paper Newspaper": "Any paper newspaper",
+    "Paper packet": "Any paper packet",
+    "Paper plate": "Any plastic plate, soiled or not",
+    "Paper wrapping": "Any paper wrapping",
+    "Glass": "Any glass",
+    "Metal bottle cap": "Any metal bottle caps",
+    "Metal can": "Any cylindrical metal cans",
+    "Metal container": "Metal containers of various shapes",
+    "Metal foil": "Any aluminium foil, seal or rigid flexible foil",
+    "Metal tray": "Any metal trays (ex: takeout hot food tray)",
+    "Metal wrapper": "Any metal wrapper",
+    "Plastic bag": "Any disposable plastic bags (ex: grocery store fruit bags)",
+    "Plastic bottle": "Any transparent or opaque plastic bottles",
+    "Plastic bottle cap": "Any bottle caps made of plastic",
+    "Plastic cofee cup lid": "Any plastic coffee cup lid",
+    "Plastic condiment container": "(ex: dipping sauce container)",
+    "Plastic container lid": "Any plastic container lid except for coffee/drink lids",
+    "Plastic cup": "Non compostable cups",
+    "Plastic cutlery": "Non compostable plastic cutlery",
+    "Plastic food container": "Any plastic container that directly contacts food (ex: microwave ramen bowl)",
+    "Plastic packet": "(ex: ketchup packet)",
+    "Styrofoam": "Any styrofoam except containers",
+    "Styrofoam container": "(ex: takeout container)",
+    "Transparent plastic": "Any transparent plastic (ex: saran wrap)"
+  },
+  "selectLabel": "Select Waste Category",
+  "childCategory": {
+    "label": "Sub-category (optional)",
+    "placeholder": "Select or enter a specific waste type",
+    "other": "Other (specify)",
+    "specify": "Specify waste type"
+  }
 }
